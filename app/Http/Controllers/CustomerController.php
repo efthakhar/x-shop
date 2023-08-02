@@ -22,6 +22,7 @@ class CustomerController extends Controller
             'email' => $request->input('email'),
             'mobile' => $request->input('mobile'),
             'user_id' => $user_id,
+            'address' => $request->input('address'),
         ]);
     }
 
@@ -57,6 +58,7 @@ class CustomerController extends Controller
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'mobile' => $request->input('mobile'),
+            'address' => $request->input('address'),
         ]);
     }
 }

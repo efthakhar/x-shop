@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('email', 50);
             $table->string('mobile', 50);
+            $table->text('address')->nullable();
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')
