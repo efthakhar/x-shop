@@ -40,8 +40,7 @@ Route::post('/customer-by-id', [CustomerController::class, 'CustomerByID'])->mid
 // Customer API
 Route::get('/list-campaign', [CampaignController::class, 'CampaignList'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/create-campaign', [CampaignController::class, 'CampaignCreate'])->middleware([TokenVerificationMiddleware::class]);
-// Route::post('/delete-customer', [CustomerController::class, 'CustomerDelete'])->middleware([TokenVerificationMiddleware::class]);
-// Route::post('/update-customer', [CustomerController::class, 'CustomerUpdate'])->middleware([TokenVerificationMiddleware::class]);
-// Route::post('/customer-by-id', [CustomerController::class, 'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/delete-campaign', [CampaignController::class, 'CampaignDelete'])->middleware([TokenVerificationMiddleware::class]);
+
 
 
