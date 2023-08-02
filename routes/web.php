@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
@@ -27,6 +28,7 @@ Route::get('/resetPassword', [UserController::class, 'ResetPasswordPage'])->midd
 Route::get('/dashboard', [DashboardController::class, 'DashboardPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/userProfile', [UserController::class, 'ProfilePage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/customerPage', [CustomerController::class, 'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/campaignPage', [CampaignController::class, 'CampaignListPage'])->middleware([TokenVerificationMiddleware::class]);
 
 // Customer API
 Route::post('/create-customer', [CustomerController::class, 'CustomerCreate'])->middleware([TokenVerificationMiddleware::class]);
@@ -35,7 +37,11 @@ Route::post('/delete-customer', [CustomerController::class, 'CustomerDelete'])->
 Route::post('/update-customer', [CustomerController::class, 'CustomerUpdate'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/customer-by-id', [CustomerController::class, 'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
 
-// Invoice
-Route::post('/invoice-create', [InvoiceController::class, 'invoiceCreate'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/invoice-select', [InvoiceController::class, 'invoiceSelect'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/invoice-delete', [InvoiceController::class, 'invoiceDelete'])->middleware([TokenVerificationMiddleware::class]);
+// Customer API
+Route::get('/list-campaign', [CampaignController::class, 'CampaignList'])->middleware([TokenVerificationMiddleware::class]);
+// Route::post('/create-customer', [CustomerController::class, 'CustomerCreate'])->middleware([TokenVerificationMiddleware::class]);
+// Route::post('/delete-customer', [CustomerController::class, 'CustomerDelete'])->middleware([TokenVerificationMiddleware::class]);
+// Route::post('/update-customer', [CustomerController::class, 'CustomerUpdate'])->middleware([TokenVerificationMiddleware::class]);
+// Route::post('/customer-by-id', [CustomerController::class, 'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
+
+

@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('campaign_name');
             $table->string('campaign_mail_subject');
             $table->text('campaign_mail_content');
-            $table->json('targeted_customers_ids');
+            $table->json('targeted_customers_ids')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')
+                ->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamps();
         });
     }

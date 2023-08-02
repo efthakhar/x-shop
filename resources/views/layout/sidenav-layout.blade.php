@@ -81,6 +81,10 @@
         <i class="bi bi-people"></i>
         <span class="side-bar-item-caption">Customer</span>
     </a>
+    <a href="{{url("/campaignPage")}}" class="side-bar-item">
+        <i class="bi bi-gift"></i>
+        <span class="side-bar-item-caption">Campaigns</span>
+    </a>
 
 
 </div>
