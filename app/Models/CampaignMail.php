@@ -12,6 +12,7 @@ class CampaignMail extends Model
         'campaign_name',
         'campaign_mail_subject',
         'campaign_mail_content',
-        'targeted_customers_ids'
+        'targeted_customers_ids',
+        'user_id'
     ];
 }

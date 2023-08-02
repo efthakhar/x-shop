@@ -4,7 +4,7 @@
         <div class="card px-5 py-5">
             <div class="row justify-content-between ">
                 <div class="align-items-center col">
-                    <h4>Campaigns</h4>
+                    <h4>Created Campaigns</h4>
                 </div>
                 <div class="align-items-center col">
                     <button data-bs-toggle="modal" data-bs-target="#create-modal" class="float-end btn m-0 btn-sm bg-gradient-primary">Create</button>
@@ -48,11 +48,9 @@ async function getList() {
     res.data.forEach(function (item,index) {
         let row=`<tr>
                     <td>${index+1}</td>
-                    <td>${item['name']}</td>
-                    <td>${item['email']}</td>
-                    <td>${item['mobile']}</td>
+                    <td>${item['campaign_name']}</td>
+                    <td>${item['campaign_mail_subject']}</td>
                     <td>
-                        <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                         <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
                     </td>
                  </tr>`
